@@ -58,10 +58,18 @@ h1{
 }
 
 
-.estiloParagrafo {
+.estiloLista {
   background-color: rgb(34, 34, 34);
   cursor: pointer;
   font-size: 20px;
+
+}
+.estiloFinalizar{
+  border: 0;
+  color: blue;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 15px;
 }
 
 .tarefas{

@@ -5,33 +5,39 @@ let botaoLimpar = document.getElementById("limpar");
 let botaoLimpar2 = document.getElementById("limpar2")
 let tarefaCompleta = document.getElementById("containerCompletas")
 
-adicionarNaLista.addEventListener("click", function () {
+function adicionarTarefa() {
   if (campoInput.value.trim() !== "") {
-    let paragrafo = document.createElement("li");
-    let addBotao = document.createElement("button")
-    paragrafo.classList.add('estiloParagrafo');
+    let lista = document.createElement("li");
+    let addBotao = document.createElement("button");
+    lista.classList.add('estiloLista');
     addBotao.classList.add('estiloFinalizar');
-    
-
-
-    
-    paragrafo.innerText = campoInput.value;
-    containerTarefas.appendChild(paragrafo);
-    containerTarefas.createElement("button")
+    addBotao.textContent = "Finalizar"
     campoInput.focus();
-
+    lista.innerText = campoInput.value;
+    containerTarefas.appendChild(lista);
+    lista.appendChild(addBotao)
     campoInput.value = ""
-    paragrafo.addEventListener("click", function () {
-      containerTarefas.removeChild(paragrafo);
-      tarefaCompleta.appendChild(paragrafo);
-    })
-    botaoLimpar.addEventListener("click", function () {
-      containerTarefas.removeChild(paragrafo);
-      tarefaCompleta.appendChild(paragrafo);
+    lista.addEventListener("click", function () {
+      containerTarefas.removeChild(lista);
+      tarefaCompleta.appendChild(lista);
+      lista.removeChild(lista.childNodes[1]) 
       campoInput.focus();
-    })
+    });
+    botaoLimpar.addEventListener("click", function () {
+      containerTarefas.removeChild(lista);
+      tarefaCompleta.appendChild(lista);
+      lista.removeChild(lista.childNodes[1]) 
+      campoInput.focus();
+    });
     botaoLimpar2.addEventListener("click", function () {
-      tarefaCompleta.removeChild(paragrafo);
-    })
+      tarefaCompleta.removeChild(lista);
+      campoInput.focus();
+    });
   }
-})
+}
+adicionarNaLista.addEventListener("click", adicionarTarefa);
+document.addEventListener("keypress", function (event) { 
+    if (event.keyCode === 13) {
+        adicionarTarefa();
+    }
+});
