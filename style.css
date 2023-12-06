@@ -31,12 +31,17 @@ h1{
   background-color: aliceblue;
 }
 
+input{
+  border-radius: 2px;
+}
+
 #adicionar{
   height: 34px;
   width: 50px;
   border: 1px solid black;
   font-size: 20px;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 #limpar{
@@ -45,16 +50,15 @@ h1{
   border: 1px solid black;
   font-size: 20px;
   cursor: pointer;
+  border-radius: 2px;
 }
 
-#limpar2{
+#limpar2, #limpar3{
   text-align: center;
-  margin: auto;
-  height: 34px;
-  width: 460px;
+  font-size: medium;
   border: 1px solid black;
-  font-size: 20px;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 
