@@ -1,17 +1,26 @@
 let adicionarNaLista = document.getElementById("adicionar");
 let containerTarefas = document.getElementById("tarefas");
-let campoinput = document.getElementById("informacao")
+let campoInput = document.getElementById("informacao")
 let botaoLimpar = document.getElementById("limpar");
 let botaoLimpar2 = document.getElementById("limpar2")
 let tarefaCompleta = document.getElementById("containerCompletas")
 
 adicionarNaLista.addEventListener("click", function () {
-  if (campoinput.value.trim() !== "") {
+  if (campoInput.value.trim() !== "") {
     let paragrafo = document.createElement("li");
-    paragrafo.classList.add('paragrafoestilo');
-    paragrafo.innerText = campoinput.value;
+    let addBotao = document.createElement("button")
+    paragrafo.classList.add('estiloParagrafo');
+    addBotao.classList.add('estiloFinalizar');
+    
+
+
+    
+    paragrafo.innerText = campoInput.value;
     containerTarefas.appendChild(paragrafo);
-    campoinput.value = ""
+    containerTarefas.createElement("button")
+    campoInput.focus();
+
+    campoInput.value = ""
     paragrafo.addEventListener("click", function () {
       containerTarefas.removeChild(paragrafo);
       tarefaCompleta.appendChild(paragrafo);
@@ -19,9 +28,10 @@ adicionarNaLista.addEventListener("click", function () {
     botaoLimpar.addEventListener("click", function () {
       containerTarefas.removeChild(paragrafo);
       tarefaCompleta.appendChild(paragrafo);
+      campoInput.focus();
     })
     botaoLimpar2.addEventListener("click", function () {
-      tarefacompleta.removeChild(paragrafo);
+      tarefaCompleta.removeChild(paragrafo);
     })
   }
 })
