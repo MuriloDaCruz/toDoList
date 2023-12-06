@@ -21,7 +21,7 @@ function adicionarTarefa() {
     lista.addEventListener("click", function () {
       containerTarefas.removeChild(lista);
       tarefaCompleta.appendChild(lista);
-      lista.removeChild(lista.childNodes[1]) 
+      lista.removeChild(lista.childNodes[1])
       campoInput.focus();
     });
     botaoLimpar.addEventListener("click", function () {
@@ -30,13 +30,13 @@ function adicionarTarefa() {
       lista.removeChild(lista.childNodes[1]);
       campoInput.focus();
     });
-    botaoLimpar2.addEventListener("click", function() {
+    botaoLimpar2.addEventListener("click", function () {
     tarefaCompleta.removeChild(lista);
     campoInput.focus();
     });
     botaoLimpar3.addEventListener("click", function () {
-      tarefaCompleta.removeChild(lista);
-      containerTarefas.removeChild(lista);
+      tarefaCompleta.innerHTML = "";
+      containerTarefas.innerHTML = "";
       lista.removeChild(lista.childNodes[1]);
       campoInput.focus();
     });
